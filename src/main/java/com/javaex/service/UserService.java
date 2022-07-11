@@ -12,6 +12,15 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 
+	// 회원가입
+	public int join(UserVo userVo) {
+		System.out.println("UserService.join()");
+
+		int count = userDao.userInsert(userVo);
+
+		return count;
+	}
+
 	// 로그인
 	public UserVo login(UserVo userVo) {
 		System.out.println("UserService.login()");
@@ -21,12 +30,24 @@ public class UserService {
 		return authUser;
 	}
 
-	// 회원가입
-	public int join(UserVo userVo) {
-		System.out.println("UserService.join()");
+	// 중복체크
+	public String idCheck(String id) {
 
-		int count = userDao.userInsert(userVo);
+		String idCheck = userDao.idCheck(id);
+		System.out.println(idCheck);
 
-		return count;
+		String result;
+
+		if (idCheck != null) {
+			result = "fail";
+			
+		} else {
+			result = "success";
+		}
+
+		System.out.println(result);
+
+		return result;
 	}
+
 }

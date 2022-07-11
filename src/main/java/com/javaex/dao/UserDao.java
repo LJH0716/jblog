@@ -30,4 +30,10 @@ public class UserDao {
 		return count;
 	}
 
+	// 중복체크
+	public String idCheck(String id) {
+
+		return sqlSession.selectOne("users.idCheck", id);
+	}
+
 }
