@@ -12,7 +12,7 @@
 	</resultMap>
 
 	<!-- 회원가입 -->
-	<insert id="join" parameterType="UserVo">
+	<insert id="insert" parameterType="UserVo">
 		<![CDATA[
 			insert into users
 			values(seq_users_no.nextval, #{id}, #{userName}, #{password}, sysdate)
@@ -21,7 +21,7 @@
 	
 
 	<!-- 로그인 -->
-	<select id="login" parameterType="UserVo" resultType="UserVo">
+	<select id="getUser" parameterType="UserVo" resultType="UserVo">
 		<![CDATA[
 			select  id,
 					userName,

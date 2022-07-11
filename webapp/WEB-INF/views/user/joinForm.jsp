@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -12,9 +12,11 @@
 <body>
 	<div id="center-content">
 		
-		<!-- 메인 해더 -->
-	
-
+		<!-- header -->
+		<c:import url="/WEB-INF/views/includes/main-header.jsp"></c:import>
+		<!-- //header-->
+		
+		
 		<div>		
 			<form id="joinForm" method="post" action="${pageContext.request.contextPath}/user/join">
 				<table>
@@ -59,7 +61,9 @@
 		</div>
 		
 		
-		<!-- 메인 푸터  자리-->
+		<!-- footer -->
+		<c:import url="/WEB-INF/views/includes/main-footer.jsp"></c:import>
+		<!-- //footer -->
 		
 	</div>
 
